@@ -1,6 +1,8 @@
 package ziyagurel.eCommerce;
 
 import ziyagurel.eCommerce.business.concretes.UserService;
+import ziyagurel.eCommerce.core.GoogleAdapter;
+import ziyagurel.eCommerce.core.GoogleService;
 import ziyagurel.eCommerce.dataAccess.abstracts.IUserDao;
 import ziyagurel.eCommerce.dataAccess.concretes.UserHibernateDao;
 import ziyagurel.eCommerce.entities.concretes.User;
@@ -24,8 +26,8 @@ public class Main {
             service.sendToConfirmMail();
             service.completedRegister();
         }
-
-
-
+        User user4 = new User("Cris","Nolan", "crisnolan@windowslive.com","1234");
+        GoogleService gservice = new GoogleAdapter();
+        gservice.googleWithRegister();
     }
 }
